@@ -1,0 +1,27 @@
+<ion-content>
+  <div >
+    <ion-list >
+      <div class="ion-text-center">
+        <ion-label> Tarjetas </ion-label>
+      </div>
+      <ion-item *ngFor="let task of Tasks" >
+        <ion-card>
+          <img src="{{task.category}}" />
+          <ion-card-header>
+            <ion-card-subtitle>{{task.name}}</ion-card-subtitle>
+            <ion-card-title>{{task.title}}</ion-card-title>
+          </ion-card-header>
+          <div class="ion-text-center">
+            <ion-button [routerLink]="['/update-todo/', task.id]">
+              <ion-icon name="create"></ion-icon>Editar
+            </ion-button>
+            <ion-button clear (click)="remove(task.id)">
+              <ion-icon name="trash"></ion-icon> Eliminar
+            </ion-button>
+          </div>
+        </ion-card>
+      </ion-item>
+    </ion-list>
+  </div>
+  
+</ion-content>

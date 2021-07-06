@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Update Task</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input formControlName="name" type="text" required></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating">Titulo</ion-label>
+      <ion-input formControlName="title" type="text" required></ion-input>
+    </ion-item>
+    <ion-list >
+      <ion-radio-group formControlName="category" value="http://lorempixel.com/400/200/nature/" required>
+        <ion-list-header>
+          <ion-label>Eliga una categoría</ion-label>
+        </ion-list-header>
+    
+        <ion-item>
+          <ion-label>Naturaleza</ion-label>
+          <ion-radio slot="end" value="http://lorempixel.com/400/200/nature/"></ion-radio>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>Ciudades</ion-label>
+          <ion-radio slot="end" value="http://lorempixel.com/400/200/city/"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Deportes</ion-label>
+          <ion-radio slot="end" value="http://lorempixel.com/400/200/sports/"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Gatos</ion-label>
+          <ion-radio slot="end" value="http://lorempixel.com/400/200/cats/"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="secondary" shape="full" expand="block" >Actualizar Card</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>
